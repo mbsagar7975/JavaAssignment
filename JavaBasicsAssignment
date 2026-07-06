@@ -1,0 +1,62 @@
+/**
+ * Program to demonstrate:
+ * 1. Class, Object, Method and Method Signature
+ * 2. Print Name
+ * 3. Single-line, Multi-line and Documentation Comments
+ * 4. Different Data Types
+ * 5. Local and Global Variables
+ * 6. Function Call from Main Method
+ */
+
+public class JavaBasics {
+
+    // Global Variable
+    int number = 100;
+
+    // Method Signature: public void printName()
+    public void printName() {
+        System.out.println("My Name is Sagar");
+    }
+
+    // Method to demonstrate local and global variables
+    public void variableScope() {
+
+        // Local Variable
+        int number = 200;
+
+        System.out.println("\nLocal Variable  : " + number);
+        System.out.println("Global Variable : " + this.number);
+    }
+
+    public static void main(String[] args) {
+
+        // Creating Object
+        JavaBasics obj = new JavaBasics();
+
+        // Calling Method
+        obj.printName();
+
+        // Single-line comment
+        System.out.println("\n----- Different Data Types -----");
+
+        /*
+         Multi-line Comment
+         Printing different data types
+        */
+
+        int age = 21;
+        boolean status = true;
+        char grade = 'A';
+        float percentage = 85.5f;
+        double salary = 45000.75;
+
+        System.out.println("Integer  : " + age);
+        System.out.println("Boolean  : " + status);
+        System.out.println("Character: " + grade);
+        System.out.println("Float    : " + percentage);
+        System.out.println("Double   : " + salary);
+
+        System.out.println("\n----- Variable Scope -----");
+        obj.variableScope();
+    }
+}
