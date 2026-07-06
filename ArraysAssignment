@@ -1,0 +1,308 @@
+public class ArraysProgram {
+
+    // 1. Add integer values of an array
+    public void sumArray(int arr[]) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++)
+            sum += arr[i];
+        System.out.println("1. Sum = " + sum);
+    }
+
+    // 2. Average of array
+    public void averageArray(int arr[]) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++)
+            sum += arr[i];
+        System.out.println("2. Average = " + (sum / arr.length));
+    }
+
+    // 3. Find index of an element
+    public void findIndex(int arr[], int value) {
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                index = i;
+                break;
+            }
+        }
+        System.out.println("3. Index of " + value + " = " + index);
+    }
+
+    // 4. Check array contains value
+    public void containsValue(int arr[], int value) {
+        boolean found = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value)
+                found = true;
+        }
+        System.out.println("4. Contains " + value + " : " + found);
+    }
+
+    // 5. Remove specific element
+    public void removeElement(int arr[], int value) {
+        System.out.print("5. After Removing " + value + " : ");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != value)
+                System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // 6. Copy array
+    public void copyArray(int arr[]) {
+        int copy[] = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++)
+            copy[i] = arr[i];
+
+        System.out.print("6. Copied Array : ");
+        for (int i = 0; i < copy.length; i++)
+            System.out.print(copy[i] + " ");
+        System.out.println();
+    }
+
+    // 7. Insert element at position
+    public void insertElement() {
+
+        int arr[] = {10,20,30,40,50};
+        int newArr[] = new int[arr.length + 1];
+
+        int position = 2;
+        int value = 25;
+
+        for(int i=0,j=0;i<newArr.length;i++) {
+            if(i==position)
+                newArr[i]=value;
+            else
+                newArr[i]=arr[j++];
+        }
+
+        System.out.print("7. After Insertion : ");
+        for(int i=0;i<newArr.length;i++)
+            System.out.print(newArr[i]+" ");
+        System.out.println();
+    }
+
+    // 8. Minimum and Maximum
+    public void minMax(int arr[]) {
+
+        int min=arr[0];
+        int max=arr[0];
+
+        for(int i=1;i<arr.length;i++) {
+
+            if(arr[i]<min)
+                min=arr[i];
+
+            if(arr[i]>max)
+                max=arr[i];
+        }
+
+        System.out.println("8. Minimum = "+min);
+        System.out.println("   Maximum = "+max);
+    }
+
+    // 9. Reverse array
+    public void reverseArray(int arr[]) {
+
+        System.out.print("9. Reverse : ");
+
+        for(int i=arr.length-1;i>=0;i--)
+            System.out.print(arr[i]+" ");
+
+        System.out.println();
+    }
+
+    // 10. Duplicate values
+    public void duplicateValues(int arr[]) {
+
+        System.out.print("10. Duplicates : ");
+
+        for(int i=0;i<arr.length;i++) {
+            for(int j=i+1;j<arr.length;j++) {
+                if(arr[i]==arr[j])
+                    System.out.print(arr[i]+" ");
+            }
+        }
+
+        System.out.println();
+    }
+
+    // 11. Common values
+    public void commonValues(int a[],int b[]) {
+
+        System.out.print("11. Common Values : ");
+
+        for(int i=0;i<a.length;i++) {
+            for(int j=0;j<b.length;j++) {
+                if(a[i]==b[j])
+                    System.out.print(a[i]+" ");
+            }
+        }
+
+        System.out.println();
+    }
+
+    // 12. Remove duplicate elements
+    public void removeDuplicates(int arr[]) {
+
+        System.out.print("12. Without Duplicates : ");
+
+        for(int i=0;i<arr.length;i++) {
+
+            boolean duplicate=false;
+
+            for(int j=0;j<i;j++) {
+                if(arr[i]==arr[j])
+                    duplicate=true;
+            }
+
+            if(!duplicate)
+                System.out.print(arr[i]+" ");
+        }
+
+        System.out.println();
+    }
+
+    // 13 & 14. Second largest number
+    public void secondLargest(int arr[]) {
+
+        int largest=Integer.MIN_VALUE;
+        int second=Integer.MIN_VALUE;
+
+        for(int i=0;i<arr.length;i++) {
+
+            if(arr[i]>largest) {
+                second=largest;
+                largest=arr[i];
+            }
+            else if(arr[i]>second && arr[i]!=largest)
+                second=arr[i];
+        }
+
+        System.out.println("13 & 14. Second Largest = "+second);
+    }
+
+    // 15. Count even and odd
+    public void evenOddCount(int arr[]) {
+
+        int even=0,odd=0;
+
+        for(int i=0;i<arr.length;i++) {
+
+            if(arr[i]%2==0)
+                even++;
+            else
+                odd++;
+        }
+
+        System.out.println("15. Even Count = "+even);
+        System.out.println("    Odd Count = "+odd);
+    }
+
+    // 16. Difference of largest and smallest
+    public void difference(int arr[]) {
+
+        int min=arr[0];
+        int max=arr[0];
+
+        for(int i=1;i<arr.length;i++) {
+
+            if(arr[i]<min)
+                min=arr[i];
+
+            if(arr[i]>max)
+                max=arr[i];
+        }
+
+        System.out.println("16. Difference = "+(max-min));
+    }
+
+    // 17. Verify array contains 12 and 23
+    public void contains12and23(int arr[]) {
+
+        boolean has12=false;
+        boolean has23=false;
+
+        for(int i=0;i<arr.length;i++) {
+
+            if(arr[i]==12)
+                has12=true;
+
+            if(arr[i]==23)
+                has23=true;
+        }
+
+        System.out.println("17. Contains 12 and 23 : "+(has12&&has23));
+    }
+
+    // 18. Remove duplicates and return new array
+    public void newArrayWithoutDuplicates(int arr[]) {
+
+        System.out.print("18. New Array : ");
+
+        for(int i=0;i<arr.length;i++) {
+
+            boolean duplicate=false;
+
+            for(int j=0;j<i;j++) {
+                if(arr[i]==arr[j])
+                    duplicate=true;
+            }
+
+            if(!duplicate)
+                System.out.print(arr[i]+" ");
+        }
+
+        System.out.println();
+    }
+
+    // 19. Missing number (1-100)
+    public void missingNumber(int arr[]) {
+
+        int expected=(100*101)/2;
+        int actual=0;
+
+        for(int i=0;i<arr.length;i++)
+            actual+=arr[i];
+
+        System.out.println("19. Missing Number = "+(expected-actual));
+    }
+
+    public static void main(String[] args) {
+
+        ArraysProgram obj=new ArraysProgram();
+
+        int arr[]={10,20,30,20,40,50,10,12,23};
+
+        int arr1[]={1,2,3,4,5};
+        int arr2[]={3,4,5,6,7};
+
+        int missing[]=new int[99];
+
+        int index=0;
+        for(int i=1;i<=100;i++) {
+            if(i!=55)
+                missing[index++]=i;
+        }
+
+        obj.sumArray(arr);
+        obj.averageArray(arr);
+        obj.findIndex(arr,30);
+        obj.containsValue(arr,40);
+        obj.removeElement(arr,20);
+        obj.copyArray(arr);
+        obj.insertElement();
+        obj.minMax(arr);
+        obj.reverseArray(arr);
+        obj.duplicateValues(arr);
+        obj.commonValues(arr1,arr2);
+        obj.removeDuplicates(arr);
+        obj.secondLargest(arr);
+        obj.evenOddCount(arr);
+        obj.difference(arr);
+        obj.contains12and23(arr);
+        obj.newArrayWithoutDuplicates(arr);
+        obj.missingNumber(missing);
+    }
+}
