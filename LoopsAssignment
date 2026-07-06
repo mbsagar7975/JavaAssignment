@@ -1,0 +1,194 @@
+/**
+ * =========================================================
+ * Assignment-3: Loops in Java
+ * =========================================================
+ *
+ * Topics Covered:
+ * 1. For Loop
+ * 2. While Loop
+ * 3. Equal and Not Equal Operators
+ * 4. Odd and Even Numbers
+ * 5. Largest Among Three Numbers
+ * 6. Even Numbers Between 10 and 100
+ * 7. Do-While Loop
+ * 8. Armstrong Number
+ * 9. Prime Number
+ * 10. Palindrome Number
+ * 11. Even/Odd using Switch
+ * 12. Gender using Switch
+ * 13. Multiple If-Else Statement
+ *
+ */
+
+public class LoopsProgram {
+
+    public static void main(String[] args) {
+
+        // 1. Print "Bright IT Career" 10 times using for loop
+        System.out.println("1. Print Bright IT Career 10 Times");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i + ". Bright IT Career");
+        }
+
+        // 2. Print 1 to 20 using while loop
+        System.out.println("\n2. Numbers from 1 to 20");
+        int i = 1;
+        while (i <= 20) {
+            System.out.print(i + " ");
+            i++;
+        }
+
+        // Sample numbers
+        int a = 10;
+        int b = 20;
+
+        // 3. Equal and Not Equal Operators
+        System.out.println("\n\n3. Equal and Not Equal Operators");
+        System.out.println("a == b : " + (a == b));
+        System.out.println("a != b : " + (a != b));
+
+        // 4. Print Odd and Even Numbers (1-20)
+        System.out.println("\n4. Even Numbers (1-20)");
+        for (i = 1; i <= 20; i++) {
+            if (i % 2 == 0)
+                System.out.print(i + " ");
+        }
+
+        System.out.println("\nOdd Numbers (1-20)");
+        for (i = 1; i <= 20; i++) {
+            if (i % 2 != 0)
+                System.out.print(i + " ");
+        }
+
+        // 5. Largest among three numbers
+        int x = 10, y = 30, z = 20;
+
+        System.out.println("\n\n5. Largest Among Three Numbers");
+        if (x >= y && x >= z)
+            System.out.println("Largest Number = " + x);
+        else if (y >= x && y >= z)
+            System.out.println("Largest Number = " + y);
+        else
+            System.out.println("Largest Number = " + z);
+
+        // 6. Even numbers between 10 and 100 using while
+        System.out.println("\n6. Even Numbers Between 10 and 100");
+
+        int num = 10;
+        while (num <= 100) {
+            if (num % 2 == 0)
+                System.out.print(num + " ");
+            num++;
+        }
+
+        // 7. Print 1 to 10 using do-while
+        System.out.println("\n\n7. Print 1 to 10 using Do-While");
+
+        int d = 1;
+        do {
+            System.out.print(d + " ");
+            d++;
+        } while (d <= 10);
+
+        // 8. Armstrong Number
+        System.out.println("\n\n8. Armstrong Number");
+
+        int number = 153;
+        int temp = number;
+        int sum = 0;
+
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum = sum + (digit * digit * digit);
+            temp = temp / 10;
+        }
+
+        if (sum == number)
+            System.out.println(number + " is Armstrong Number");
+        else
+            System.out.println(number + " is Not Armstrong Number");
+
+        // 9. Prime Number
+        System.out.println("\n9. Prime Number");
+
+        int prime = 17;
+        int count = 0;
+
+        for (i = 1; i <= prime; i++) {
+            if (prime % i == 0)
+                count++;
+        }
+
+        if (count == 2)
+            System.out.println(prime + " is Prime");
+        else
+            System.out.println(prime + " is Not Prime");
+
+        // 10. Palindrome Number
+        System.out.println("\n10. Palindrome Number");
+
+        int palindrome = 121;
+        int original = palindrome;
+        int reverse = 0;
+
+        while (palindrome != 0) {
+            int digit = palindrome % 10;
+            reverse = reverse * 10 + digit;
+            palindrome = palindrome / 10;
+        }
+
+        if (original == reverse)
+            System.out.println(original + " is Palindrome");
+        else
+            System.out.println(original + " is Not Palindrome");
+
+        // 11. EVEN or ODD using Switch
+        System.out.println("\n11. Even or Odd using Switch");
+
+        int value = 18;
+
+        switch (value % 2) {
+            case 0:
+                System.out.println(value + " is Even");
+                break;
+
+            case 1:
+                System.out.println(value + " is Odd");
+                break;
+        }
+
+        // 12. Gender using Switch
+        System.out.println("\n12. Gender using Switch");
+
+        char gender = 'M';
+
+        switch (gender) {
+            case 'M':
+            case 'm':
+                System.out.println("Male");
+                break;
+
+            case 'F':
+            case 'f':
+                System.out.println("Female");
+                break;
+
+            default:
+                System.out.println("Invalid Gender");
+        }
+
+        // 13. Multiple If-Else (Largest among 10,20,30)
+        System.out.println("\n13. Largest Number using Multiple If-Else");
+
+        int n1 = 10;
+        int n2 = 20;
+        int n3 = 30;
+
+        if (n1 > n2 && n1 > n3)
+            System.out.println("Largest = " + n1);
+        else if (n2 > n1 && n2 > n3)
+            System.out.println("Largest = " + n2);
+        else
+            System.out.println("Largest = " + n3);
+    }
+}
