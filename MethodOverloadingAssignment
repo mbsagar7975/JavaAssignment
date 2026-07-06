@@ -1,0 +1,54 @@
+public class MethodOverloadingDemo {
+
+    // 1. Same name, different number of parameters (same data type)
+    void display(int a) {
+        System.out.println("Method 1 : One Integer Parameter = " + a);
+    }
+
+    void display(int a, int b) {
+        System.out.println("Method 1 : Two Integer Parameters = " + a + " " + b);
+    }
+
+    // 2. Same name, different number of parameters (different data types)
+    void show(int a) {
+        System.out.println("Method 2 : Integer Parameter = " + a);
+    }
+
+    void show(int a, String name) {
+        System.out.println("Method 2 : Integer and String = " + a + " " + name);
+    }
+
+    // 4. Same name, same number of parameters, different data types
+    void print(int a) {
+        System.out.println("Method 4 : Integer = " + a);
+    }
+
+    void print(double a) {
+        System.out.println("Method 4 : Double = " + a);
+    }
+
+    public static void main(String[] args) {
+
+        MethodOverloadingDemo obj = new MethodOverloadingDemo();
+
+        System.out.println("Question 1");
+        obj.display(10);
+        obj.display(10, 20);
+
+        System.out.println("\nQuestion 2");
+        obj.show(100);
+        obj.show(200, "Java");
+
+        System.out.println("\nQuestion 3");
+        System.out.println("Not Possible in Java");
+        System.out.println("Duplicate methods are not allowed.");
+
+        System.out.println("\nQuestion 4");
+        obj.print(50);
+        obj.print(25.5);
+
+        System.out.println("\nQuestion 5");
+        System.out.println("Not Possible in Java");
+        System.out.println("Changing only return type is not Method Overloading.");
+    }
+}
